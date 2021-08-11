@@ -11,7 +11,8 @@ public class MoodAnalyserTest {
         //Calling AnalyseMood Method And Giving Input Message
         String   mood = moodAnalyser.analyseMood();
         //Asserting The Result As Boolean Type True Or False
-        Assertions.assertEquals(mood, "SAD");
+        Assertions.assertEquals("SAD",mood);
+        System.out.println(mood);
     }
     //Test To Given Message Any Mood Should Return Happy
     @Test
@@ -22,5 +23,18 @@ public class MoodAnalyserTest {
         String   mood = moodAnalyser.analyseMood();
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertEquals(mood, "HAPPY");
+        System.out.println(mood);
+    }
+    //Tc2.1
+    //Test To Given Message Null Mood Should Return Happy
+    @Test
+    public void givenMessage_NullMood_ShouldReturnHappy(){
+        //Defining moodAnalyser Object
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+        //Calling AnalyseMood Method And Giving Input Message
+        String   mood = moodAnalyser.analyseMood();
+        //Asserting The Result As Boolean Type True Or False
+        Assertions.assertSame("HAPPY",mood);
+        System.out.println(mood);
     }
 }
